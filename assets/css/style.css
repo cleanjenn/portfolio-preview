@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: black;
+    --secondary-color: rgb(240, 223, 114);
+    --third-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+main {
+    background-color: darkgray;
+}
+
+/* appling styles to header */
+header {
+    padding: 20px 35px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: darkgray;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 9999;
+}
+header h1 {
+    padding: 15px 0px;
+    font-weight: bold;
+    font-size: 36px;
+    color: var(--secondary-color);
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+header nav {
+    margin: 20px 0;
+}
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+header nav ul li a {
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 1.55vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header nav ul li a:hover {
+    background-color: var(--secondary-color);
+    color: black;
+    border-radius: 15px;
+    text-shadow: none;
+}
+/*end of Header*/
+/*Hero/Jumbotron begins*/
+.hero {
+    background-image: url("../images/galaxy2.jpeg");
+    background-size: 150px;
+    background-attachment: fixed;
+    background-position: 80%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 75px 50px;
+}
+.hero-img {
+    max-width: 70px;
+}
+.hero-cta {
+    text-align: right;
+    margin: 3.5%;
+    color: #ffffff;
+    font-size: 32xp;
+}
+/*end of Hero*/
+/*about me section*/
+.intro {
+    margin: 0 auto;
+    color: var(--third-color);
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+}
+
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+.flex-row p {
+    padding-top: 20px;
+    margin-left: 10px;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--third-color);
+}
+.picture {
+    background-image: url(../images/hero-img.jpg);
+    border-radius: 100px;
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    width: 300px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+.section-title {
+    width: 25%;
+    font-size: 48px;
+    color: #f0df72;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    border-right: 6px solid;
+    text-align: right;
+    padding-right: 20px;
+    margin-right: 10px;
+}
+/* Work section */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-template-rows: repeat(3, 175px);
+    grid-gap: 10px;
+    grid-auto-flow: dense;
+}
+/* Grid container */
+.item-1 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+.item-image {
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: var(--primary-color);
+}
+
+.capture {
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+    transition: 0.5s;
+}
+
+.capture:hover {
+    opacity: 1;
+}
+
+.description {
+    border-radius: 0 15px 15px 0;
+    position: absolute;
+    width: 130px;
+    padding: 5px 0px;
+    margin-bottom: 5px;
+    background: var(--primary-color);
+    text-align: left;
+    color: white;
+}
+
+.description h3 {
+    font-size:  14px;
+}
+
+.description p {
+    font-size: 10px;
+}
+/* Contact me section */
+.contact {
+    align-content: center;
+    font-weight: 18px;
+}
+
+.contact a {
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 15px;
+}
+
+.contact a:hover {
+    background-color: var(--secondary-color);
+    color: black;
+    border-radius: 15px;
+    text-shadow: none;
+    font-weight: bold;
+}
+/* Media queries start here */
+@media screen and (max-width 980px) {
+    header {
+        padding-bottom: 0;
+        justify-content: center;
+        position: relative;
+    }
+    header h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    header nav ul li a {
+        font-size: 15px;
+    }
+    .grid-container {
+        grid-template-columns: repeat(2, 2fr);
+        grid-template-rows: repeat(4, 100px);
+    }
+
+    .screenshot {
+        opacity: 1;
+    }
+} 
+
+@media screen and (max-width: 768px) {
+    main {
+        padding: 0 15px;
+    }
+
+    .intro {
+        display: inline;
+    }
+
+    .section-title {
+        width: 100%;
+        text-align: center;
+        border-right: none;
+        border-bottom: 2px solid var(--primary-color);
+        margin: 20px 0;
+        padding: 0;
+        padding-bottom: 10px;
+    }
+
+    .contact {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width 575px) {
+    header nav ul {
+        justify-content: space-around;
+    }
+
+    header nav ul li a {
+        margin-top: 10px;
+    }
+}
